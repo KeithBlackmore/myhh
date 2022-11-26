@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!--create a node named mouse_joy to sub&pub datas,and set axis parameters about device-->
+
+    <node pkg="joystickss" type="joystick1" name="joystick1"/>
+
+    <param name="axis_linear" value="0" type="int"/>
+
+    <param name="axis_angular" value="0" type="int"/>
+
+    <!--create a joy node and set some parameters about device-->
+
+    <node respawn="true" pkg="joy" type="joy_node" name="joy_node">
+
+        <param name="dev" value="/dev/input/js2" type="string"/>
+
+        <param name="deadzone" value="0.01"/>
+
+    </node>
+
+</launch>
